@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackState : StateBase
@@ -10,10 +8,8 @@ public class AttackState : StateBase
     public float maxDist = 1f;
 
     public Character target;
-    public Character owner;
 
-
-    public void StateUpdate()
+    public override void StateUpdate()
     {
         if (Vector2.Distance(owner.transform.position, target.transform.position) <= maxDist)
         {
@@ -24,7 +20,7 @@ public class AttackState : StateBase
                 Attack();
             }
             if (target.health.isDead)
-                owner.SwichToIdle();
+                owner.ChangeState(owner.idleState);
         }
     }
 
