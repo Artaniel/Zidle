@@ -17,7 +17,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        currentState.StateUpdate();
+        currentState?.StateUpdate();
     }
 
     public void ChangeState(StateBase target) {

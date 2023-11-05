@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7518882845673119168}
   - component: {fileID: 9003049038599471410}
+  - component: {fileID: 4395625523594076241}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -167,6 +168,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &4395625523594076241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154337062036955133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96128d059df0fbf468ba9a760ad4d199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topY: 4.95
+  botY: -4.97
+  leftX: -8.92
+  rightX: 8.9
 --- !u!1 &9053197060079248746
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +259,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.1385876, g: 0.6603774, b: 0.05918475, a: 1}
+  m_Color: {r: 0.12033421, g: 0.3301887, b: 0.08877714, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

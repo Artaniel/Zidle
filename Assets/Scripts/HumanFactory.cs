@@ -12,7 +12,7 @@ public class HumanFactory : MonoBehaviour
     public void Init() {
         for (int i = 0; i < spawnNumber; i++) {
             Character human = Instantiate(humanPrefab, GetSpawnPosition(), Quaternion.identity, container).GetComponent<Character>();
-
+            humanList.Add(human);
         }
     }
 
