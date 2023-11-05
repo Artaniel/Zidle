@@ -8,6 +8,8 @@ public class MoveState : StateBase
     public Vector3 targetPosition;
     public float attackDistance;
 
+    public override void Init(HumanFactory humanFactory) { }
+
     public override void StateUpdate() {
         if (owner.attackTarget)
             targetPosition = owner.attackTarget.transform.position;

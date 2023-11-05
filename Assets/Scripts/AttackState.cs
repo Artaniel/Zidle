@@ -9,6 +9,8 @@ public class AttackState : StateBase
 
     public Character target;
 
+    public override void Init(HumanFactory humanFactory) { }
+
     public override void StateUpdate()
     {
         if (Vector2.Distance(owner.transform.position, target.transform.position) <= maxDist)
