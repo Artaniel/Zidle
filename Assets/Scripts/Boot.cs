@@ -7,10 +7,12 @@ public class Boot : MonoBehaviour
     public static Boot instance;
 
 
-    [SerializeField] private HumanFactory _humanFactory;
     public static HumanFactory humanFactory { get => instance._humanFactory; }
+    [SerializeField] private HumanFactory _humanFactory;
+    public static GameField gameField { get => instance._gameField; }
+    [SerializeField] private GameField _gameField;
 
-    
+
 
 
     private void Awake()
