@@ -4,11 +4,13 @@ using UnityEngine.AI;
 public class MoveState : StateBase
 {
     public float speed = 1f;
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
     public Vector3 targetPosition;
     public float attackDistance;
 
-    public override void Init(HumanFactory humanFactory) { }
+    public override void Init(HumanFactory humanFactory) {
+        agent = owner.agent;
+    }
 
     public override void StateUpdate() {
         if (owner.attackTarget)

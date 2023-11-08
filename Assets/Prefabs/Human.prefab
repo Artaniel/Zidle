@@ -129,6 +129,7 @@ MonoBehaviour:
   idleState: {fileID: 78316868556833950}
   moveState: {fileID: 2297690416577793351}
   attackTarget: {fileID: 0}
+  agent: {fileID: 2258628638236804397}
 --- !u!114 &6866234090590580015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +192,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 1820263386976024432}
   speed: 1
-  agent: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   attackDistance: 0

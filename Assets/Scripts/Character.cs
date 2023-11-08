@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
@@ -10,13 +11,15 @@ public class Character : MonoBehaviour
     public MoveState moveState;
 
     public Character attackTarget;
+    public NavMeshAgent agent;
 
     public void Init() {
         currentState = idleState;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
-    private void Update()
-    {
+    private void Update() {
         currentState?.StateUpdate();
     }
 

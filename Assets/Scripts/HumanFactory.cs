@@ -11,13 +11,16 @@ public class HumanFactory : MonoBehaviour
 
     public void Init() {
         for (int i = 0; i < spawnNumber; i++) {
-            Character human = Instantiate(humanPrefab, GetSpawnPosition(), Quaternion.identity, container).GetComponent<Character>();
+            Character human = Instantiate(humanPrefab).GetComponent<Character>();
+            human.transform.position = GetSpawnPosition();
+
+            human.Init();
             humanList.Add(human);
         }
     }
 
     private Vector3 GetSpawnPosition() {
-        return Vector3.zero; // temp, will need some kind of game field manager to get bordes
+        return Boot.gameField.GetRandomPoint();
     }
 
 }
