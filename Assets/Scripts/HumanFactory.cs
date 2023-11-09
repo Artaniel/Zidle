@@ -10,6 +10,7 @@ public class HumanFactory : MonoBehaviour
     public Transform container;
 
     public void Init() {
+        humanList = new List<Character>();
         for (int i = 0; i < spawnNumber; i++) {
             Character human = Instantiate(humanPrefab).GetComponent<Character>();
             human.transform.position = GetSpawnPosition();

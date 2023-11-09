@@ -8,7 +8,7 @@ public class MoveState : StateBase
     public Vector3 targetPosition;
     public float attackDistance;
 
-    public override void Init(HumanFactory humanFactory) {
+    public override void Init() {
         agent = owner.agent;
     }
 

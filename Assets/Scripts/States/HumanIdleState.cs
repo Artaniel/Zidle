@@ -5,14 +5,14 @@ using UnityEngine;
 public class HumanIdleState : IdleState
 {
     public float lookRadius = 5f;
+    private const string HUMANTAG = "Human";
+    private const string ZOMBIETAG = "Zombie";
 
-    public override void Init(HumanFactory humanFactory) { }
+    public override void Init() { }
 
     public override void StateUpdate() {
         float zombieCount = 0;
         float humanCount = 0;
-        const string HUMANTAG = "Human";
-        const string ZOMBIETAG = "Human";
         float minDist = Mathf.Infinity;
         Character minDistZombie = null;
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(owner.transform.position, lookRadius)) {

@@ -9,7 +9,7 @@ public class AttackState : StateBase
 
     public Character target;
 
-    public override void Init(HumanFactory humanFactory) { }
+    public override void Init() { }
 
     public override void StateUpdate()
     {
