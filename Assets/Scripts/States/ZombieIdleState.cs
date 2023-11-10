@@ -5,17 +5,21 @@ using UnityEngine.AI;
 
 public class ZombieIdleState : IdleState
 {
-    public NavMeshAgent agent;
-
     public override void StateUpdate()
     {
-        if (Boot.humanFactory.humanList == null || Boot.humanFactory.humanList.Count < 1)
+        if (Boot.humanFactory.humanList == null || Boot.humanFactory.humanList.Count < 1) { 
+            Debug.LogWarning("can't get humanFactory list");
             return;
+        }
+        if (!owner.agent.isOnNavMesh) {
+            Debug.LogWarning("agent not on navmesh");
+            return;
+        }
         NavMeshPath path = new NavMeshPath();
         float minPathLength = Mathf.Infinity;
         Character closestHuman = null;
         foreach (Character human in Boot.humanFactory.humanList) {
-            agent.CalculatePath(human.transform.position, path);
+            owner.agent.CalculatePath(human.transform.position, path);
             float pathLength = GetPathLength(owner.transform.position, path);
             if (pathLength < minPathLength) {
                 minPathLength = pathLength;

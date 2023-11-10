@@ -99,7 +99,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7173119011675210201}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.001
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -163,8 +163,7 @@ MonoBehaviour:
   owner: {fileID: 470189395241982625}
   damage: 1
   speed: 1
-  maxDist: 1
-  target: {fileID: 0}
+  maxDist: 0.1
 --- !u!114 &5094264323902374046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 470189395241982625}
-  agent: {fileID: 0}
 --- !u!114 &6370217459925144658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,4 +192,4 @@ MonoBehaviour:
   owner: {fileID: 470189395241982625}
   speed: 1
   targetPosition: {x: 0, y: 0, z: 0}
-  attackDistance: 1
+  attackDistance: 0.1

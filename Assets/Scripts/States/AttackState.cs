@@ -7,26 +7,24 @@ public class AttackState : StateBase
     private float timer = 0;
     public float maxDist = 1f;
 
-    public Character target;
-
     public override void Init() { }
 
     public override void StateUpdate()
     {
-        if (Vector2.Distance(owner.transform.position, target.transform.position) <= maxDist)
+        if (Vector2.Distance(owner.transform.position, owner.attackTarget.transform.position) <= maxDist)
         {
             timer += Time.deltaTime;
             float delay = 1f / speed;
-            while (timer > delay && !target.health.isDead) {
+            while (timer > delay && !owner.attackTarget.health.isDead) {
                 timer -= delay;
                 Attack();
             }
-            if (target.health.isDead)
+            if (owner.attackTarget.health.isDead)
                 owner.ChangeState(owner.idleState);
         }
     }
 
     private void Attack() {
-        target.health.Damage(damage);
+        owner.attackTarget.health.Damage(damage);
     }
 }
