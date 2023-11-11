@@ -15,21 +15,42 @@ public class ZombieIdleState : IdleState
             Debug.LogWarning("agent not on navmesh");
             return;
         }
-        NavMeshPath path = new NavMeshPath();
-        float minPathLength = Mathf.Infinity;
-        Character closestHuman = null;
-        foreach (Character human in Boot.humanFactory.humanList) {
-            owner.agent.CalculatePath(human.transform.position, path);
-            float pathLength = GetPathLength(owner.transform.position, path);
-            if (pathLength < minPathLength) {
-                minPathLength = pathLength;
-                closestHuman = human;
-            }
-        }
+        Character closestHuman = GetClosest();
         if (closestHuman) {
             owner.attackTarget = closestHuman;
             owner.ChangeState(owner.attackState);
         }
+    }
+
+    private Character GetClosest() {
+        float minPathLength = Mathf.Infinity;
+        Character closestHuman = null;
+        foreach (Character human in Boot.humanFactory.humanList)
+        {
+            if (Vector3.Distance(owner.transform.position, human.transform.position) < minPathLength)
+            {
+                minPathLength = Vector3.Distance(owner.transform.position, human.transform.position);
+                closestHuman = human;
+            }
+        }
+        return closestHuman;
+    }
+
+    private Character GetcClosestFromNavmesh() {
+        NavMeshPath path = new NavMeshPath();
+        float minPathLength = Mathf.Infinity;
+        Character closestHuman = null;
+        foreach (Character human in Boot.humanFactory.humanList)
+        {
+            owner.agent.CalculatePath(human.transform.position, path);
+            float pathLength = GetPathLength(owner.transform.position, path);
+            if (pathLength < minPathLength)
+            {
+                minPathLength = pathLength;
+                closestHuman = human;
+            }
+        }
+        return closestHuman;
     }
 
     private float GetPathLength(Vector3 startPoint, NavMeshPath path) {
