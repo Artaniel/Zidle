@@ -103,8 +103,8 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 999999
+  m_StoppingDistance: 0.01
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 470189395241982625}
   damage: 1
-  speed: 1
+  speed: 10
   maxDist: 0
 --- !u!114 &5094264323902374046
 MonoBehaviour:
@@ -190,6 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 470189395241982625}
-  speed: 1
+  speed: 0.1
   targetPosition: {x: 0, y: 0, z: 0}
   attackDistance: 0

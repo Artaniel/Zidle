@@ -18,7 +18,7 @@ public class ZombieIdleState : IdleState
         Character closestHuman = GetClosest();
         if (closestHuman) {
             owner.attackTarget = closestHuman;
-            owner.ChangeState(owner.attackState);
+            owner.ChangeState(owner.moveState);
         }
     }
 

@@ -190,6 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 1820263386976024432}
-  speed: 1
+  speed: 0.1
   targetPosition: {x: 0, y: 0, z: 0}
   attackDistance: 0.1

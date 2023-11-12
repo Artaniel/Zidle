@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
         currentState?.StateUpdate();
     }
 
-    public void ChangeState(StateBase target) {
-        currentState = target;
+    public void ChangeState(StateBase newStane) {
+        currentState = newStane;
     }
 }
