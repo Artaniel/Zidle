@@ -9,6 +9,8 @@ public class AttackState : StateBase
 
     public override void Init() { }
 
+    public override void StartState() { }
+
     public override void StateUpdate()
     {
         if (Vector2.Distance(owner.transform.position, owner.attackTarget.transform.position) <= maxDist)

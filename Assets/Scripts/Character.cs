@@ -25,5 +25,6 @@ public class Character : MonoBehaviour
 
     public void ChangeState(StateBase newStane) {
         currentState = newStane;
+        newStane.StartState();
     }
 }
