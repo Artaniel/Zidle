@@ -10,7 +10,8 @@ public class MoveState : StateBase
     public override void Init() {
     }
 
-    public override void StartState() {
+    public override void StartState(Character _owner) {
+        base.StartState(_owner);
         if (owner.attackTarget)
             targetPosition = owner.attackTarget.transform.position;
         owner.agent.SetDestination(targetPosition);

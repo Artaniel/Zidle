@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class ZombieIdleState : IdleState
 {
-    public override void StartState()
+    public override void StartState(Character _owner)
     {
-        base.StartState();
+        base.StartState(_owner);
 
         if (Boot.humanFactory.humanList == null || Boot.humanFactory.humanList.Count < 1)
         {
@@ -20,14 +20,14 @@ public class ZombieIdleState : IdleState
             return;
         }
 
-        TryAttachClosest();
+        TryAttackClosest();
     }
 
     public override void StateUpdate() {
-        TryAttachClosest();
+        TryAttackClosest();
     }
 
-    protected void TryAttachClosest() {
+    protected void TryAttackClosest() {
         Character closestHuman = GetClosest();
         if (closestHuman) {
             owner.attackTarget = closestHuman;

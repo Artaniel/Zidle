@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
 
     public void Init() {
         currentState = idleState;
+        currentState.StartState(this);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
@@ -25,6 +26,6 @@ public class Character : MonoBehaviour
 
     public void ChangeState(StateBase newStane) {
         currentState = newStane;
-        newStane.StartState();
+        newStane.StartState(this);
     }
 }
