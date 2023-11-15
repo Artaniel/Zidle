@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HumanIdleState : IdleState
 {
-    public float lookRadius = 5f;
+    public float lookRadius = 1f;
     private const string HUMANTAG = "Human";
     private const string ZOMBIETAG = "Zombie";
 
@@ -15,6 +15,7 @@ public class HumanIdleState : IdleState
         float humanCount = 0;
         float minDist = Mathf.Infinity;
         Character minDistZombie = null;
+        Debug.DrawLine(transform.position + lookRadius * Vector3.left, transform.position + lookRadius * Vector3.right, Color.black);
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(owner.transform.position, lookRadius)) {
             if (collider.CompareTag(HUMANTAG))
                 humanCount++;
@@ -33,7 +34,7 @@ public class HumanIdleState : IdleState
             if (Random.value > (zombieCount / (zombieCount + humanCount)))
             {
                 owner.attackTarget = minDistZombie;
-                owner.ChangeState(owner.attackState);
+                owner.ChangeState(owner.moveState);
             }
             else {
                 owner.moveState.targetPosition = Boot.gameField.GetRandomPoint();
