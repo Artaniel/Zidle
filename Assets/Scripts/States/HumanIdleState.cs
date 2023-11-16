@@ -15,18 +15,17 @@ public class HumanIdleState : IdleState
         float humanCount = 0;
         float minDist = Mathf.Infinity;
         Character minDistZombie = null;
-        Debug.DrawLine(transform.position + lookRadius * Vector3.left, transform.position + lookRadius * Vector3.right, Color.black);
-        foreach (Collider2D collider in Physics2D.OverlapCircleAll(owner.transform.position, lookRadius)) {
-            if (collider.CompareTag(HUMANTAG))
+        foreach (Collider2D neirbor in Physics2D.OverlapCircleAll(owner.transform.position, lookRadius)) {
+            if (neirbor.CompareTag(HUMANTAG))
                 humanCount++;
-            else if (collider.CompareTag(ZOMBIETAG))
+            else if (neirbor.CompareTag(ZOMBIETAG))
             {
                 zombieCount++;
-                float dist = Vector2.Distance(owner.transform.position, collider.transform.position);
+                float dist = Vector2.Distance(owner.transform.position, neirbor.transform.position);
                 if (dist < minDist)
                 {
                     minDist = dist;
-                    minDistZombie = collider.GetComponent<Character>();
+                    minDistZombie = neirbor.GetComponent<Character>();
                 }
             }
         }
