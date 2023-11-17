@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336928932c2768940829b5ddc4e9444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7173119011675210201, guid: e450097dc2f01774db0a5c51e27ad794, type: 3}
+  prefab: {fileID: 484862153160139966, guid: 3275e4eb7e5465d4ea9d805034bd091f, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: _gameField
       value: 
       objectReference: {fileID: 7870272999758621662}
+    - target: {fileID: 8170304468877543992, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
+      propertyPath: zombiePrefab
+      value: 
+      objectReference: {fileID: 484862153160139966, guid: 3275e4eb7e5465d4ea9d805034bd091f, type: 3}
     - target: {fileID: 8820569084073528962, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: m_Name
       value: Boot

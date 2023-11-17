@@ -24,6 +24,9 @@ public class AttackState : StateBase
             if (owner.attackTarget.health.isDead)
                 owner.ChangeState(owner.idleState);
         }
+        else {
+            owner.ChangeState(owner.idleState);
+        }
     }
 
     private void Attack() {
