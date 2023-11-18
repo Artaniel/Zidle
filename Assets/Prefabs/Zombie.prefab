@@ -120,12 +120,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484862153160139966}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cd4b3391f506fc41b6cf7a7d3b15ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5295116523051882795}
+  currentState: {fileID: 0}
   attackState: {fileID: 7236048161028913182}
   idleState: {fileID: 9090926984902425922}
   moveState: {fileID: 8545492178875848408}
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 1
-  maxDist: 0.1
+  maxDist: 0.5
 --- !u!114 &9090926984902425922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   targetPosition: {x: 0, y: 0, z: 0}
-  attackDistance: 0.1
+  attackDistance: 0.5
 --- !u!58 &567246271920296746
 CircleCollider2D:
   m_ObjectHideFlags: 0

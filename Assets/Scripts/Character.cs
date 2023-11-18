@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class Character : MonoBehaviour
 {
     public Health health;
-    private StateBase currentState;
+    [SerializeField] private StateBase currentState;
 
     public AttackState attackState;
     public IdleState idleState;
