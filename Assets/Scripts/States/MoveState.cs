@@ -14,7 +14,10 @@ public class MoveState : StateBase
         base.StartState(_owner);
         if (owner.attackTarget)
             targetPosition = owner.attackTarget.transform.position;
-        owner.agent.SetDestination(targetPosition);
+        if (owner.agent.isOnNavMesh)
+            owner.agent.SetDestination(targetPosition);
+        else
+            Debug.LogWarning("Not on navMesh");
     }
 
     public override void StateUpdate() {
