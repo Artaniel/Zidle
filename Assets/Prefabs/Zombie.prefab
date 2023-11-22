@@ -165,6 +165,7 @@ MonoBehaviour:
   damage: 1
   speed: 1
   maxDist: 0.5
+  VFXPrefab: {fileID: 8010869233481945871, guid: 2c9d95e71953cc542a77a6c21ecf0d2b, type: 3}
 --- !u!114 &9090926984902425922
 MonoBehaviour:
   m_ObjectHideFlags: 0

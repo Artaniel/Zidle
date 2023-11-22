@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 6866234090590580015}
+  currentState: {fileID: 0}
   attackState: {fileID: 5000708705228064953}
   idleState: {fileID: 530276982050245449}
   moveState: {fileID: 2297690416577793351}
@@ -164,6 +165,7 @@ MonoBehaviour:
   damage: 1
   speed: 1
   maxDist: 0.1
+  VFXPrefab: {fileID: 8010869233481945871, guid: 2c9d95e71953cc542a77a6c21ecf0d2b, type: 3}
 --- !u!114 &2297690416577793351
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class AttackState : StateBase
     private float timer = 0;
     public float maxDist = 1f;
 
+    public GameObject VFXPrefab;
+
     public override void Init() { }
 
     public override void StartState(Character _owner) { base.StartState(_owner); }
@@ -31,5 +33,9 @@ public class AttackState : StateBase
 
     private void Attack() {
         owner.attackTarget.health.Damage(damage);
+        if (VFXPrefab) {         
+            GameObject vfx = Instantiate(VFXPrefab, owner.attackTarget.transform.position,
+                Quaternion.LookRotation(owner.attackTarget.transform.position - owner.transform.position));            
+        }
     }
 }
