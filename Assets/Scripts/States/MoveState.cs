@@ -23,6 +23,7 @@ public class MoveState : StateBase
     public override void StateUpdate() {
         if (owner.attackTarget)
         {
+            targetPosition = owner.attackTarget.transform.position;
             if (Vector2.Distance(owner.transform.position, targetPosition) <= attackDistance)
                 owner.ChangeState(owner.attackState);
         }

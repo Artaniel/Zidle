@@ -21,7 +21,8 @@ public class Character : MonoBehaviour
     }
 
     private void Update() {
-        currentState?.StateUpdate();
+        if (!health.isDead)
+            currentState?.StateUpdate();
     }
 
     public void ChangeState(StateBase newStane) {

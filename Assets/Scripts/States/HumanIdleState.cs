@@ -30,7 +30,7 @@ public class HumanIdleState : IdleState
             }
         }
         if (minDistZombie) {
-            if (Random.value > (zombieCount / (zombieCount + humanCount)))
+            if (Random.value < (zombieCount / (zombieCount + humanCount)))
             {
                 owner.attackTarget = minDistZombie;
                 owner.ChangeState(owner.moveState);

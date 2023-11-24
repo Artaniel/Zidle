@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 1
-  maxDist: 0.1
+  maxDist: 0.5
   VFXPrefab: {fileID: 8010869233481945871, guid: 2c9d95e71953cc542a77a6c21ecf0d2b, type: 3}
 --- !u!114 &2297690416577793351
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   targetPosition: {x: 0, y: 0, z: 0}
-  attackDistance: 0.1
+  attackDistance: 0.5
 --- !u!114 &530276982050245449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3f383cf663ed14d8bb6d77d7f51bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 1
+  lookRadius: 2
 --- !u!58 &6042235680399014496
 CircleCollider2D:
   m_ObjectHideFlags: 0

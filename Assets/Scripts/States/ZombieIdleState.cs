@@ -28,19 +28,19 @@ public class ZombieIdleState : IdleState
     }
 
     protected void TryAttackClosest() {
-        Character closestHuman = GetClosest();
+        Character closestHuman = GetClosestAlive();
         if (closestHuman) {
             owner.attackTarget = closestHuman;
             owner.ChangeState(owner.moveState);
         }
     }
 
-    protected Character GetClosest() {
+    protected Character GetClosestAlive() {
         float minPathLength = Mathf.Infinity;
         Character closestHuman = null;
         foreach (Character human in Boot.humanFactory.humanList)
         {
-            if (Vector3.Distance(owner.transform.position, human.transform.position) < minPathLength)
+            if (!human.health.isDead && Vector3.Distance(owner.transform.position, human.transform.position) < minPathLength)
             {
                 minPathLength = Vector3.Distance(owner.transform.position, human.transform.position);
                 closestHuman = human;

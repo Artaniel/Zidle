@@ -15,6 +15,11 @@ public class AttackState : StateBase
 
     public override void StateUpdate()
     {
+        if (owner.attackTarget.health.isDead) {
+            owner.attackTarget = null;
+            owner.ChangeState(owner.idleState);
+            return;
+        }
         if (Vector2.Distance(owner.transform.position, owner.attackTarget.transform.position) <= maxDist)
         {
             timer += Time.deltaTime;
