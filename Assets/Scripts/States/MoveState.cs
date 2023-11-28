@@ -12,18 +12,13 @@ public class MoveState : StateBase
 
     public override void StartState(Character _owner) {
         base.StartState(_owner);
-        if (owner.attackTarget)
-            targetPosition = owner.attackTarget.transform.position;
-        if (owner.agent.isOnNavMesh)
-            owner.agent.SetDestination(targetPosition);
-        else
-            Debug.LogWarning("Not on navMesh");
+        RefreshDestination();
     }
 
     public override void StateUpdate() {
         if (owner.attackTarget)
         {
-            targetPosition = owner.attackTarget.transform.position;
+            RefreshDestination();
             if (Vector2.Distance(owner.transform.position, targetPosition) <= attackDistance)
                 owner.ChangeState(owner.attackState);
         }
@@ -33,5 +28,14 @@ public class MoveState : StateBase
                 owner.ChangeState(owner.idleState);
             }
         }
+    }
+
+    private void RefreshDestination() { 
+        if (owner.attackTarget)
+            targetPosition = owner.attackTarget.transform.position;
+        if (owner.agent.isOnNavMesh)
+            owner.agent.SetDestination(targetPosition);
+        else
+            Debug.LogWarning("Not on navMesh");        
     }
 }
