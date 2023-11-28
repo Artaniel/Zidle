@@ -11,13 +11,12 @@ public class AttackState : StateBase
 
     public override void Init() { }
 
-    public override void StartState(Character _owner) { base.StartState(_owner); }
+    //public override void StartState(Character _owner) { base.StartState(_owner); }
 
     public override void StateUpdate()
     {
-        if (owner.attackTarget.health.isDead) {
-            owner.attackTarget = null;
-            owner.ChangeState(owner.idleState);
+        if (owner.attackTarget.health.isDead || !owner.attackTarget) {
+            SwichToIdle();
             return;
         }
         if (Vector2.Distance(owner.transform.position, owner.attackTarget.transform.position) <= maxDist)
@@ -28,12 +27,17 @@ public class AttackState : StateBase
                 timer -= delay;
                 Attack();
             }
-            if (owner.attackTarget.health.isDead)
-                owner.ChangeState(owner.idleState);
         }
         else {
-            owner.ChangeState(owner.idleState);
+            SwichToIdle();            
         }
+    }
+
+    private void SwichToIdle()
+    {
+        owner.attackTarget = null;
+        owner.ChangeState(owner.idleState);
+
     }
 
     private void Attack() {
