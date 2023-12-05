@@ -11,6 +11,6 @@ public class DestroyOnTimer : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer >= time)
-            Destroy(gameObject);
+            Pool.ReturnToPool(gameObject);
     }
 }

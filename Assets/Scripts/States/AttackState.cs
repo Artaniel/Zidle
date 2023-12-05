@@ -43,7 +43,7 @@ public class AttackState : StateBase
     private void Attack() {
         owner.attackTarget.health.Damage(damage);
         if (VFXPrefab) {
-            GameObject vfx = Instantiate(VFXPrefab, owner.attackTarget.transform.position,
+            GameObject vfx = Pool.GetPool(VFXPrefab, owner.attackTarget.transform.position,
                 Quaternion.LookRotation(Vector3.ProjectOnPlane(owner.attackTarget.transform.position - owner.transform.position, Vector3.forward)));
         }
     }
