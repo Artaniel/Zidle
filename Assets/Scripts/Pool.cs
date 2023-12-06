@@ -54,41 +54,14 @@ public class Pool : MonoBehaviour
         }
     }
 
-    public static GameObject GetPool(GameObject prefab, Transform toTransform)
-    {
-        var pools = instance.pools;
-        if (!pools.ContainsKey(prefab.name.Replace("(Clone)", "")))
-        {
-            pools[prefab.name] = new LinkedList<PoolObject>();
-        }
-        PoolObject result;
-        if (pools[prefab.name].Count > 0)
-        {
-            result = pools[prefab.name].First.Value;
-            pools[prefab.name].RemoveFirst();
-        }
-        else
-        {
-            result.containdeObject = Instantiate(prefab, toTransform);
-            result.containdeObject.name = prefab.name;
-        }
-        Vector3 savedScale = result.containdeObject.transform.localScale;
-        result.containdeObject.transform.SetParent(toTransform);
-        result.containdeObject.transform.localPosition = Vector3.zero;
-        result.containdeObject.transform.localRotation = Quaternion.identity;
-        result.containdeObject.transform.localScale = savedScale;
-        result.containdeObject.SetActive(true);
-        return result.containdeObject;
-    }
-
     public static void ReturnToPool(PoolObject target)
     {
-        instance.toPoolBuffer.Add(target);
+        instance.MoveToPool(target);
     }
 
     public static void ReturnToPool(GameObject target)
     {
-        instance.toPoolBuffer.Add(new PoolObject(target));
+        instance.MoveToPool(new PoolObject(target));
     }
 
     public static void ClearPool()
@@ -99,17 +72,7 @@ public class Pool : MonoBehaviour
         pools.Clear();
     }
 
-    void LateUpdate() // надо ли это вообще? выглядит как остатки от тамера
-    {
-        for (int i = 0; i < toPoolBuffer.Count; i++)
-        {
-            PoolObject poolItem = toPoolBuffer[i];
-            MoveToPool(poolItem);
-            toPoolBuffer.RemoveAt(i);                
-        }
-    }
-
-    private void MoveToPool(PoolObject poolObj)
+    public void MoveToPool(PoolObject poolObj)
     {
         try
         {

@@ -10,7 +10,9 @@ public class DestroyOnTimer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= time)
-            Pool.ReturnToPool(gameObject);
+        if (timer >= time) {
+            timer = 0;
+            Pool.ReturnToPool(gameObject);            
+        }
     }
 }
