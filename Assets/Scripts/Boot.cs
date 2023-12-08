@@ -12,6 +12,8 @@ public class Boot : MonoBehaviour
     [SerializeField] private ZombieFactory _zombieFactory;
     public static GameField gameField { get => instance._gameField; }
     [SerializeField] private GameField _gameField;
+    public static Level level { get => instance._level; }
+    [SerializeField] private Level _level;
 
     private void Awake()
     {

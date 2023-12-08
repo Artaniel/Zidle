@@ -21,7 +21,7 @@ public class HumanFactory : MonoBehaviour
     }
 
     private Vector3 GetSpawnPosition() {
-        return Boot.gameField.GetRandomPoint();
+        return Boot.level.GetRandomIndors();
     }
 
 }
