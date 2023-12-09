@@ -18,6 +18,7 @@ public class Boot : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        level.Init();
         humanFactory.Init();
         zombieFactory.Init();
     }
