@@ -44,12 +44,14 @@ public class Pool : MonoBehaviour
             result.containdeObject.transform.position = pos;
             result.containdeObject.transform.rotation = rot;
             result.containdeObject.SetActive(true);
+            result.containdeObject.transform.parent = null;
             return result.containdeObject;
         }
         else
         {
             result.containdeObject = GameObject.Instantiate(prefab, pos, rot);
             result.containdeObject.name = prefab.name;
+            result.containdeObject.transform.parent = null;
             return result.containdeObject;
         }
     }
@@ -90,7 +92,7 @@ public class Pool : MonoBehaviour
             else
             {
                 pools[poolObj.containdeObject.name.Replace("(Clone)", "")].AddFirst(poolObj);
-                poolObj.containdeObject.transform.SetParent(null);
+                poolObj.containdeObject.transform.SetParent(transform);
                 poolObj.containdeObject.SetActive(false);
             }
         }

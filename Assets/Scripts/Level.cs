@@ -15,7 +15,7 @@ public class Level : MonoBehaviour
             Building building = Instantiate(buildingPrefab).GetComponent<Building>();
             building.transform.position = transform.position +
                 Random.Range(borders.x + building.borders.x, borders.z + building.borders.z) * transform.right +
-                Random.Range(borders.x + building.borders.x, borders.z + building.borders.z) * transform.right;
+                Random.Range(borders.y + building.borders.y, borders.w + building.borders.w) * transform.up;
             buildingList.Add(building);
         }
     }

@@ -50,7 +50,7 @@ MonoBehaviour:
   _humanFactory: {fileID: 5991614848145686971}
   _zombieFactory: {fileID: 8170304468877543992}
   _gameField: {fileID: 0}
-  _level: {fileID: 0}
+  _level: {fileID: 4176993253616007495}
 --- !u!114 &5991614848145686971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfea9ca5e5cf5c4b9db844adde18686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 0}
-  buildingCount: 1
-  borders: {x: 0, y: 0, z: 0, w: 0}
+  buildingPrefab: {fileID: 1407856795735318227, guid: dd9ed1f4741f36049af1f3e5bbda376d, type: 3}
+  buildingCount: 3
+  borders: {x: -8.92, y: 4.95, z: 8.9, w: -4.97}
