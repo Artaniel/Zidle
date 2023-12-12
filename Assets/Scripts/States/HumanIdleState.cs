@@ -36,7 +36,7 @@ public class HumanIdleState : IdleState
                 owner.ChangeState(owner.moveState);
             }
             else {
-                owner.moveState.targetPosition = Boot.gameField.GetRandomPoint();
+                owner.moveState.targetPosition = Boot.level.GetRandomPoint();
                 owner.ChangeState(owner.moveState);
             }
         }

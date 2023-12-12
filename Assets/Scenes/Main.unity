@@ -450,17 +450,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
---- !u!114 &7870272999758621662 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4395625523594076241, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
-  m_PrefabInstance: {fileID: 7870272999758621660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96128d059df0fbf468ba9a760ad4d199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8997112272199351988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 4569474940074085006, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: _gameField
       value: 
-      objectReference: {fileID: 7870272999758621662}
+      objectReference: {fileID: 0}
     - target: {fileID: 8820569084073528962, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: m_Name
       value: Boot

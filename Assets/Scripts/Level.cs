@@ -23,4 +23,8 @@ public class Level : MonoBehaviour
     public Vector3 GetRandomIndors() {
         return buildingList[Random.Range(0, buildingList.Count - 1)].GetRandomPointInside(); // or should it be -2? 
     }
+
+    public Vector3 GetRandomPoint() {
+        return new Vector3(Mathf.Lerp(borders.x, borders.z, Random.value), Mathf.Lerp(borders.y, borders.w, Random.value), 0);
+    }
 }

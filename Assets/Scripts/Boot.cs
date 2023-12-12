@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Boot : MonoBehaviour
 {
@@ -10,15 +11,14 @@ public class Boot : MonoBehaviour
     [SerializeField] private HumanFactory _humanFactory;
     public static ZombieFactory zombieFactory { get => instance._zombieFactory; }
     [SerializeField] private ZombieFactory _zombieFactory;
-    public static GameField gameField { get => instance._gameField; }
-    [SerializeField] private GameField _gameField;
     public static Level level { get => instance._level; }
-    [SerializeField] private Level _level;
+    [SerializeField] private Level _level;  
 
     private void Awake()
     {
         instance = this;
-        level.Init();
+        level.Init();       
+
         humanFactory.Init();
         zombieFactory.Init();
     }
