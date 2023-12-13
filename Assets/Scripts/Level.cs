@@ -27,4 +27,15 @@ public class Level : MonoBehaviour
     public Vector3 GetRandomPoint() {
         return new Vector3(Mathf.Lerp(borders.x, borders.z, Random.value), Mathf.Lerp(borders.y, borders.w, Random.value), 0);
     }
+
+    private void OnDrawGizmos() {
+        Vector3 upLeftCorner = new Vector3(borders.x, borders.y, 0);
+        Vector3 upRightCorner = new Vector3(borders.z, borders.y, 0);
+        Vector3 downLeftCorner = new Vector3(borders.x, borders.w, 0);
+        Vector3 downRightCorner = new Vector3(borders.z, borders.w, 0);
+        Gizmos.DrawLine(upLeftCorner, upRightCorner);
+        Gizmos.DrawLine(upRightCorner, downRightCorner);
+        Gizmos.DrawLine(downRightCorner, downLeftCorner);
+        Gizmos.DrawLine(downLeftCorner, upLeftCorner);
+    }
 }
