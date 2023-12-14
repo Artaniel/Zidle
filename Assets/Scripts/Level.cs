@@ -12,12 +12,32 @@ public class Level : MonoBehaviour
     public void Init() {
         buildingList = new List<Building>();
         for (int i = 0; i < buildingCount; i++) {
-            Building building = Instantiate(buildingPrefab).GetComponent<Building>();
-            building.transform.position = transform.position +
-                Random.Range(borders.x + building.borders.x, borders.z + building.borders.z) * transform.right +
-                Random.Range(borders.y + building.borders.y, borders.w + building.borders.w) * transform.up;
-            buildingList.Add(building);
+            Building newBuilding = Instantiate(buildingPrefab).GetComponent<Building>();
+            bool found = false;
+            while (!found) { 
+            newBuilding.transform.position = transform.position +
+                Random.Range(borders.x - newBuilding.borders.x, borders.z - newBuilding.borders.z) * transform.right +
+                Random.Range(borders.y - newBuilding.borders.y, borders.w - newBuilding.borders.w) * transform.up;
+                found = true;
+                foreach (Building building in buildingList)
+                    if (IsIntersecting(building.transform.position, building.borders, newBuilding.transform.position, newBuilding.borders)) {
+                        found = false;
+                        break;
+                    }
+            }
+
+            buildingList.Add(newBuilding);
         }
+    }
+
+    private bool IsIntersecting(Vector3 firstPostion, Vector4 firstBorders, Vector3 secondPosition, Vector4 secondBorders) {
+        bool intersectingHorizontaly = !(
+            firstPostion.x + firstBorders.x > secondPosition.x + secondBorders.z ||
+            firstPostion.x + firstBorders.z < secondPosition.x + secondBorders.x);
+        bool intersectingVerticaly = !(
+            firstPostion.y + firstBorders.w > secondPosition.y + secondBorders.y ||
+            firstPostion.y + firstBorders.y < secondPosition.y + secondBorders.w);
+        return intersectingHorizontaly && intersectingVerticaly;
     }
 
     public Vector3 GetRandomIndors() {
