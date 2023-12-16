@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class MoveState : StateBase
 {
-    public float speed = 1f;
     public Vector3 targetPosition;
     public float attackDistance;
 
