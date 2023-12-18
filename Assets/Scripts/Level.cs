@@ -41,7 +41,7 @@ public class Level : MonoBehaviour
     }
 
     public Vector3 GetRandomIndors() {
-        return buildingList[Random.Range(0, buildingList.Count - 1)].GetRandomPointInside(); // or should it be -2? 
+        return buildingList[Random.Range(0, buildingList.Count)].GetRandomPointInside(); // or should it be -2? 
     }
 
     public Vector3 GetRandomPoint() {

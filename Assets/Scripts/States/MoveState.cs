@@ -22,7 +22,7 @@ public class MoveState : StateBase
                 owner.ChangeState(owner.attackState);
         }
         else {
-            if (Vector2.Distance(owner.transform.position, targetPosition) <= 0.01f) {
+            if (Vector2.Distance(owner.transform.position, targetPosition) <= 0.1f) {
                 owner.transform.position = targetPosition;
                 owner.ChangeState(owner.idleState);
             }
