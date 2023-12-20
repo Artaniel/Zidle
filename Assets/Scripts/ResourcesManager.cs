@@ -11,11 +11,12 @@ public class ResourcesManager : MonoBehaviour
     public TextMeshProUGUI energyText;
 
     private void Update() {
-        energy += energyRegen * Time.deltaTime;
+        energy = Mathf.Clamp(energy + energyRegen * Time.deltaTime, 0, maxEnergy);
+        RefreshUI();
     }
 
     private void RefreshUI() {
-        energyText.text = $"{energy}/{maxEnergy}";
+        energyText.text = $"{energy:0.00}/{maxEnergy}";
     }
 
 }
