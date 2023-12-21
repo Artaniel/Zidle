@@ -323,6 +323,17 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 3fe70ea368df8db47b1b5eddb6db79ca, type: 2}
+--- !u!114 &1170967966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+  m_PrefabInstance: {fileID: 4463614122695357453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27dff5429ef47f43a1a59918e04026d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2115052104
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +763,10 @@ PrefabInstance:
       propertyPath: _gameField
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4569474940074085006, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
+      propertyPath: _resourcesManager
+      value: 
+      objectReference: {fileID: 1170967966}
     - target: {fileID: 8820569084073528962, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: m_Name
       value: Boot
