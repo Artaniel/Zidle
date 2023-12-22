@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ResourcesManager : MonoBehaviour
+public class Economy : MonoBehaviour
 {
     public float energy = 0;
     public float maxEnergy = 10;
     public float energyRegen = 1f;
     public TextMeshProUGUI energyText;
-    public float zombiePrice = 10;
+    public float zombiePrice = 10;    
 
     private void Update() {
         energy = Mathf.Clamp(energy + energyRegen * Time.deltaTime, 0f, maxEnergy);

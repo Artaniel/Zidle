@@ -13,8 +13,8 @@ public class Boot : MonoBehaviour
     [SerializeField] private ZombieFactory _zombieFactory;
     public static Level level { get => instance._level; }
     [SerializeField] private Level _level;
-    public static ResourcesManager resourcesManager { get => instance._resourcesManager; }
-    [SerializeField] private ResourcesManager _resourcesManager;
+    public static Economy resourcesManager { get => instance._resourcesManager; }
+    [SerializeField] private Economy _resourcesManager;
 
 
     private void Awake()
