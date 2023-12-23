@@ -5,28 +5,28 @@ using TMPro;
 
 public class Economy : MonoBehaviour
 {
-    public float energy = 0;
-    public float maxEnergy = 10;
-    public float energyRegen = 1f;
-    public TextMeshProUGUI energyText;
-    public float zombiePrice = 10;    
+    public float zombiePrice = 10;
+    public Energy energy;
+    public ResoursePrototype enegryPrototype;
+
+    public void Init() {
+        energy = Energy.Instantiate(enegryPrototype);
+    }
 
     private void Update() {
-        energy = Mathf.Clamp(energy + energyRegen * Time.deltaTime, 0f, maxEnergy);
         RefreshUI();
     }
 
     private void RefreshUI() {
-        energyText.text = $"{energy:0.00}/{maxEnergy}";
+        //energyText.text = $"{energy:0.00}/{maxEnergy}";
     }
 
     public bool CanSpawn() {
-        return energy >= zombiePrice;
+        return energy.value >= zombiePrice;
     }
 
     public void SpendEnergyOnZombie() {
-        energy -= zombiePrice;
-        energy = Mathf.Clamp(energy, 0f, maxEnergy);
+        energy.value = Mathf.Clamp(energy.value-zombiePrice, 0, energy.max);
     }
 
 }
