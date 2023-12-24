@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: enegryPrototype
       value: 
       objectReference: {fileID: 11400000, guid: 9168b75351b6a7d428c346353bdcc1ef, type: 2}
+    - target: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      propertyPath: uiResourcesText
+      value: 
+      objectReference: {fileID: 549903397}
     - target: {fileID: 7846618080695192593, guid: 8374b779bef702c4088406aef275ee10, type: 3}
       propertyPath: m_Name
       value: Economy
@@ -616,6 +620,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385401371033643108, guid: f6ce84347afc0ed409d6ba55985e1cae, type: 3}
+      propertyPath: m_Name
+      value: ResourcesText
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167089567546887205, guid: f6ce84347afc0ed409d6ba55985e1cae, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -763,6 +775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4569474940074085006, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
+      propertyPath: _economy
+      value: 
+      objectReference: {fileID: 1170967966}
     - target: {fileID: 4569474940074085006, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: _gameField
       value: 

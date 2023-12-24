@@ -8,6 +8,7 @@ public class Economy : MonoBehaviour
     public float zombiePrice = 10;
     public Energy energy;
     public ResoursePrototype enegryPrototype;
+    public TextMeshProUGUI uiResourcesText;
 
     public void Init() {
         energy = Energy.Instantiate(enegryPrototype);
@@ -18,7 +19,9 @@ public class Economy : MonoBehaviour
     }
 
     private void RefreshUI() {
-        //energyText.text = $"{energy:0.00}/{maxEnergy}";
+        uiResourcesText.text = "";
+        // foreach resouces
+        uiResourcesText.text += energy.GetUIString()+ '\n';
     }
 
     public bool CanSpawn() {

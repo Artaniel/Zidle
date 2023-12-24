@@ -10,4 +10,8 @@ public class EconomyResource
     public float startingValue = 0f;
     public float regen = 0f;
     public string UIName = "placeholder";
+
+    public virtual string GetUIString() {
+        return $"{value:0.00}/{max} {UIName}";
+    }
 }

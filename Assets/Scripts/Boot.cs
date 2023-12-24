@@ -13,8 +13,8 @@ public class Boot : MonoBehaviour
     [SerializeField] private ZombieFactory _zombieFactory;
     public static Level level { get => instance._level; }
     [SerializeField] private Level _level;
-    public static Economy resourcesManager { get => instance._resourcesManager; }
-    [SerializeField] private Economy _resourcesManager;
+    public static Economy economy { get => instance._economy; }
+    [SerializeField] private Economy _economy;
 
 
     private void Awake()
@@ -24,6 +24,7 @@ public class Boot : MonoBehaviour
 
         humanFactory.Init();
         zombieFactory.Init();
+        economy.Init();
     }
 
 }

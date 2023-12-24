@@ -7,9 +7,9 @@ public class SpawnZOnClick : MonoBehaviour
 
     private void Update() {
         if (Mouse.current.leftButton.wasPressedThisFrame) {
-            if (Boot.resourcesManager.CanSpawn()) { 
+            if (Boot.economy.CanSpawn()) { 
                 Boot.zombieFactory.SpawnNewZombie(Vector3.ProjectOnPlane(Camera.main.ScreenToWorldPoint(Mouse.current.position.value),Vector3.forward));
-                Boot.resourcesManager.SpendEnergyOnZombie();
+                Boot.economy.SpendEnergyOnZombie();
             }
         }
     }
