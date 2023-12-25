@@ -6,12 +6,12 @@ using TMPro;
 public class Economy : MonoBehaviour
 {
     public float zombiePrice = 10;
-    public Energy energy;
+    public EconomyResource energy;
     public ResoursePrototype enegryPrototype;
     public TextMeshProUGUI uiResourcesText;
 
     public void Init() {
-        energy = Energy.Instantiate(enegryPrototype);
+        energy = EconomyResource.Instantiate(enegryPrototype);
     }
 
     private void Update() {

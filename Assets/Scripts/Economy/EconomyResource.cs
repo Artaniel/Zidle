@@ -14,4 +14,9 @@ public class EconomyResource
     public virtual string GetUIString() {
         return $"{value:0.00}/{max} {UIName}";
     }
+
+    public static EconomyResource Instantiate(ResoursePrototype prototype)
+    {
+        return prototype.Instantiate();
+    }
 }
