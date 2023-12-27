@@ -13,6 +13,8 @@ public class Character : MonoBehaviour
     public Character attackTarget;
     public NavMeshAgent agent;
 
+    [HideInInspector] public Building currentBuilding;
+
     public void Init() {
         currentState = idleState;
         currentState.StartState(this);

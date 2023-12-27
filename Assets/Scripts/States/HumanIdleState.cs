@@ -7,6 +7,8 @@ public class HumanIdleState : IdleState
     public float lookRadius = 1f;
     private const string HUMANTAG = "Human";
     private const string ZOMBIETAG = "Zombie";
+    private float idleWalkTimer = 0;
+    private float idleWalkPeriod = 5;
 
     public override void Init() { }
 
@@ -39,6 +41,16 @@ public class HumanIdleState : IdleState
                 owner.ChangeState(owner.moveState);
             }
         }
+        else
+            IdleWalkUpdate();            
     }
 
+    private void IdleWalkUpdate() {
+        idleWalkTimer += Time.deltaTime;
+        if (idleWalkTimer >= idleWalkPeriod) {
+            idleWalkTimer = 0;
+            owner.moveState.targetPosition = owner.currentBuilding.GetRandomPointInside();
+            owner.ChangeState(owner.moveState);
+        }
+    }
 }
