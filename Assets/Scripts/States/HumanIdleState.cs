@@ -37,12 +37,17 @@ public class HumanIdleState : IdleState
                 owner.ChangeState(owner.moveState);
             }
             else {
-                owner.moveState.targetPosition = Boot.level.GetRandomIndors();
-                owner.ChangeState(owner.moveState);
+                MoveToRandomIndors();
             }
         }
         else
             IdleWalkUpdate();            
+    }
+
+    private void MoveToRandomIndors() {
+        owner.currentBuilding = Boot.level.GetRandomBuilding();
+        owner.moveState.targetPosition = owner.currentBuilding.GetRandomPointInside();
+        owner.ChangeState(owner.moveState);        
     }
 
     private void IdleWalkUpdate() {

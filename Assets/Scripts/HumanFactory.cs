@@ -13,15 +13,11 @@ public class HumanFactory : MonoBehaviour
         humanList = new List<Character>();
         for (int i = 0; i < spawnNumber; i++) {
             Character human = Instantiate(humanPrefab).GetComponent<Character>();
-            human.transform.position = GetSpawnPosition();
-
+            human.currentBuilding = Boot.level.GetRandomBuilding();
+            human.transform.position = human.currentBuilding.GetRandomPointInside();
             human.Init();
             humanList.Add(human);
         }
-    }
-
-    private Vector3 GetSpawnPosition() {
-        return Boot.level.GetRandomIndors();
     }
 
 }

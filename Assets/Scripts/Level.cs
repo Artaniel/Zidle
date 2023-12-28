@@ -41,7 +41,7 @@ public class Level : MonoBehaviour
     }
 
     public Vector3 GetRandomIndors() {
-        return buildingList[Random.Range(0, buildingList.Count)].GetRandomPointInside(); // or should it be -2? 
+        return GetRandomBuilding().GetRandomPointInside(); // or should it be -2? 
     }
 
     public Vector3 GetRandomPoint() {
@@ -57,5 +57,9 @@ public class Level : MonoBehaviour
         Gizmos.DrawLine(upRightCorner, downRightCorner);
         Gizmos.DrawLine(downRightCorner, downLeftCorner);
         Gizmos.DrawLine(downLeftCorner, upLeftCorner);
+    }
+
+    public Building GetRandomBuilding() {
+        return buildingList[Random.Range(0, buildingList.Count)];
     }
 }
