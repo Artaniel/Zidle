@@ -8,6 +8,7 @@ public class HumanIdleState : IdleState
     private const string HUMANTAG = "Human";
     private const string ZOMBIETAG = "Zombie";
     private float idleWalkTimer = 0;
+    private float idleWalkPeriodMax = 5;
     private float idleWalkPeriod = 5;
 
     public override void Init() { }
@@ -54,6 +55,7 @@ public class HumanIdleState : IdleState
         idleWalkTimer += Time.deltaTime;
         if (idleWalkTimer >= idleWalkPeriod) {
             idleWalkTimer = 0;
+            idleWalkPeriod = Random.Range(0, idleWalkPeriodMax);
             owner.moveState.targetPosition = owner.currentBuilding.GetRandomPointInside();
             owner.ChangeState(owner.moveState);
         }
