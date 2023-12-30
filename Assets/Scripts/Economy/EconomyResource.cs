@@ -15,8 +15,11 @@ public class EconomyResource
         return $"{value:0.00}/{max} {UIName}";
     }
 
-    public static EconomyResource Instantiate(ResoursePrototype prototype)
-    {
+    public static EconomyResource Instantiate(ResoursePrototype prototype) {
         return prototype.Instantiate();
+    }
+
+    public void ApplyRegen() {
+        value = Mathf.Clamp(value + regen * Time.deltaTime, 0, max);
     }
 }

@@ -15,6 +15,7 @@ public class Economy : MonoBehaviour
     }
 
     private void Update() {
+        energy.ApplyRegen();
         RefreshUI();
     }
 
