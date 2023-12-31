@@ -10,8 +10,20 @@ public class ShopItem : MonoBehaviour
     public float buyAmmount = 0.1f;
 
     public string GetTooltip() {
-        float price = (boughtCount + 1) * 0.1f;
+        float price = GetPrice();
         boughtCount++;
         return $"Buy {statName} {buyAmmount} \n for {boughtCount} {resourceName}";
+    }
+
+    private void OnMouseDown() {
+        TryBuy();
+    }
+
+    private void TryBuy() {
+        //if (??? >= GetPrice()) // надо придумать как выяснять какой изресурсов тут... enum?
+    }
+
+    private float GetPrice() {
+        return (boughtCount + 1) * 0.1f;
     }
 }
