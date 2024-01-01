@@ -8,6 +8,11 @@ public class ShopItem : MonoBehaviour
     public string resourceName;
     private int boughtCount = 0;
     public float buyAmmount = 0.1f;
+    private EconomyResource priceResource;
+
+    public void Init(EconomyResource resource) { 
+        priceResource = resource;
+    }
 
     public string GetTooltip() {
         float price = GetPrice();
@@ -20,7 +25,11 @@ public class ShopItem : MonoBehaviour
     }
 
     private void TryBuy() {
-        //if (??? >= GetPrice()) // надо придумать как выяснять какой изресурсов тут... enum?
+        float price = GetPrice();
+        if (priceResource.value >= price) {
+            priceResource.value -= price;
+            //add stat... как его определить то? enum?
+        }
     }
 
     private float GetPrice() {
