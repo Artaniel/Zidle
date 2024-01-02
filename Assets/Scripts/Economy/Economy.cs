@@ -9,9 +9,11 @@ public class Economy : MonoBehaviour
     public EconomyResource energy;
     public ResoursePrototype enegryPrototype;
     public TextMeshProUGUI uiResourcesText;
+    [HideInInspector] public GlobalStat attackSpeed;
 
     public void Init() {
         energy = EconomyResource.Instantiate(enegryPrototype);
+        attackSpeed = new GlobalStat(1);
     }
 
     private void Update() {
@@ -22,7 +24,7 @@ public class Economy : MonoBehaviour
     private void RefreshUI() {
         uiResourcesText.text = "";
         // foreach resouces
-        uiResourcesText.text += energy.GetUIString()+ '\n';
+        uiResourcesText.text += energy.GetUIString() + '\n';
     }
 
     public bool CanSpawn() {
@@ -30,7 +32,11 @@ public class Economy : MonoBehaviour
     }
 
     public void SpendEnergyOnZombie() {
-        energy.value = Mathf.Clamp(energy.value-zombiePrice, 0, energy.max);
+        energy.value = Mathf.Clamp(energy.value - zombiePrice, 0, energy.max);
+    }
+
+    public void ShopItemRegister(ShopItem shopItem) {
+        shopItem.Init(energy, attackSpeed);// test
     }
 
 }

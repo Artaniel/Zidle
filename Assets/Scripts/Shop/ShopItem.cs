@@ -9,8 +9,14 @@ public class ShopItem : MonoBehaviour
     private int boughtCount = 0;
     public float buyAmmount = 0.1f;
     private EconomyResource priceResource;
+    private GlobalStat stat;
 
-    public void Init(EconomyResource resource) { 
+    private void Start()
+    {
+        Boot.economy.ShopItemRegister(this);
+    }
+
+    public void Init(EconomyResource resource, GlobalStat stat) { 
         priceResource = resource;
     }
 
@@ -20,15 +26,11 @@ public class ShopItem : MonoBehaviour
         return $"Buy {statName} {buyAmmount} \n for {boughtCount} {resourceName}";
     }
 
-    private void OnMouseDown() {
-        TryBuy();
-    }
-
-    private void TryBuy() {
+    public void TryBuy() {
         float price = GetPrice();
         if (priceResource.value >= price) {
             priceResource.value -= price;
-            //add stat... как его определить то? enum?
+            stat.Change(buyAmmount);
         }
     }
 
