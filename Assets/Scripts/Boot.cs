@@ -15,7 +15,8 @@ public class Boot : MonoBehaviour
     [SerializeField] private Level _level;
     public static Economy economy { get => instance._economy; }
     [SerializeField] private Economy _economy;
-
+    public static Shop shop { get => instance._shop; }
+    [SerializeField] private Shop _shop;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class Boot : MonoBehaviour
         humanFactory.Init();
         zombieFactory.Init();
         economy.Init();
+        shop.Init();
     }
 
 }

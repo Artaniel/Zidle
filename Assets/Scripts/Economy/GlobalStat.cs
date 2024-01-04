@@ -13,5 +13,6 @@ public class GlobalStat
 
     public void Change(float delta) {
         value += delta;
+        Debug.Log("stat change" + value.ToString());
     }
 }

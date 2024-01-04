@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2684360243537203247}
   - component: {fileID: 9167089567546887205}
   m_Layer: 5
-  m_Name: EnergyText
+  m_Name: ResourcesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,9 +169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -198,8 +196,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -251,6 +249,7 @@ GameObject:
   - component: {fileID: 6990185318845270010}
   - component: {fileID: 188991100410359307}
   - component: {fileID: 9033447917656410819}
+  - component: {fileID: 8988103996777916323}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -274,8 +273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -78.076416, y: -80.73462}
-  m_SizeDelta: {x: 156.153, y: 161.4692}
+  m_AnchoredPosition: {x: -80.30188, y: -80.73462}
+  m_SizeDelta: {x: 160.604, y: 161.4692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &188991100410359307
 CanvasRenderer:
@@ -315,6 +314,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8988103996777916323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046999707516111636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84d23eb714487c4fbf887db7ff47410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemPrefab: {fileID: 6223245253939087772, guid: 7de4c5b8865b33246a2fa16041302d43, type: 3}
+  items: []
+  bloodForAttackSpeedItem: {fileID: 0}
 --- !u!1 &7886562086140990205
 GameObject:
   m_ObjectHideFlags: 0

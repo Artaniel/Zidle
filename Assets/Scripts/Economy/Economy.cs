@@ -6,13 +6,16 @@ using TMPro;
 public class Economy : MonoBehaviour
 {
     public float zombiePrice = 10;
-    public EconomyResource energy;
-    public ResoursePrototype enegryPrototype;
     public TextMeshProUGUI uiResourcesText;
+    [HideInInspector] public EconomyResource energy;
+    public ResoursePrototype enegryPrototype;
+    [HideInInspector] public EconomyResource blood;
+    public ResoursePrototype bloodPrototype;
     [HideInInspector] public GlobalStat attackSpeed;
 
     public void Init() {
         energy = EconomyResource.Instantiate(enegryPrototype);
+        blood = EconomyResource.Instantiate(bloodPrototype);
         attackSpeed = new GlobalStat(1);
     }
 
@@ -24,7 +27,7 @@ public class Economy : MonoBehaviour
     private void RefreshUI() {
         uiResourcesText.text = "";
         // foreach resouces
-        uiResourcesText.text += energy.GetUIString() + '\n';
+        uiResourcesText.text += $"{energy.GetUIString()}\n";
     }
 
     public bool CanSpawn() {

@@ -18,6 +18,7 @@ public class ShopItem : MonoBehaviour
 
     public void Init(EconomyResource resource, GlobalStat stat) { 
         priceResource = resource;
+        this.stat = stat;
     }
 
     public string GetTooltip() {
@@ -31,6 +32,7 @@ public class ShopItem : MonoBehaviour
         if (priceResource.value >= price) {
             priceResource.value -= price;
             stat.Change(buyAmmount);
+            boughtCount++;
         }
     }
 
