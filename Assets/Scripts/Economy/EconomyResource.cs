@@ -20,6 +20,10 @@ public class EconomyResource
     }
 
     public void ApplyRegen() {
-        value = Mathf.Clamp(value + regen * Time.deltaTime, 0, max);
+        Change(regen * Time.deltaTime);
+    }
+
+    public void Change(float ammount) {
+        value = Mathf.Clamp(value + ammount, 0, max);
     }
 }

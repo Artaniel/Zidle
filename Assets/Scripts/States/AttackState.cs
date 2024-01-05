@@ -11,8 +11,6 @@ public class AttackState : StateBase
 
     public override void Init() { }
 
-    //public override void StartState(Character _owner) { base.StartState(_owner); }
-
     public override void StateUpdate()
     {
         if (owner.attackTarget.health.isDead || !owner.attackTarget) {
@@ -33,11 +31,9 @@ public class AttackState : StateBase
         }
     }
 
-    private void SwichToIdle()
-    {
+    private void SwichToIdle() {
         owner.attackTarget = null;
         owner.ChangeState(owner.idleState);
-
     }
 
     private void Attack() {
@@ -46,5 +42,6 @@ public class AttackState : StateBase
             GameObject vfx = Pool.GetPool(VFXPrefab, owner.attackTarget.transform.position,
                 Quaternion.LookRotation(Vector3.ProjectOnPlane(owner.attackTarget.transform.position - owner.transform.position, Vector3.forward)));
         }
+        Boot.economy.OnAttack(owner);
     }
 }

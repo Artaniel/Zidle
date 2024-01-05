@@ -8,13 +8,13 @@ public class Economy : MonoBehaviour
     public float zombiePrice = 10;
     public TextMeshProUGUI uiResourcesText;
     [HideInInspector] public EconomyResource energy;
-    public ResoursePrototype enegryPrototype;
+    public ResoursePrototype energyPrototype;
     [HideInInspector] public EconomyResource blood;
     public ResoursePrototype bloodPrototype;
     [HideInInspector] public GlobalStat attackSpeed;
 
     public void Init() {
-        energy = EconomyResource.Instantiate(enegryPrototype);
+        energy = EconomyResource.Instantiate(energyPrototype);
         blood = EconomyResource.Instantiate(bloodPrototype);
         attackSpeed = new GlobalStat(1);
     }
@@ -28,6 +28,7 @@ public class Economy : MonoBehaviour
         uiResourcesText.text = "";
         // foreach resouces
         uiResourcesText.text += $"{energy.GetUIString()}\n";
+        uiResourcesText.text += $"{blood.GetUIString()}\n";
     }
 
     public bool CanSpawn() {
@@ -38,8 +39,7 @@ public class Economy : MonoBehaviour
         energy.value = Mathf.Clamp(energy.value - zombiePrice, 0, energy.max);
     }
 
-    public void ShopItemRegister(ShopItem shopItem) {
-        shopItem.Init(energy, attackSpeed);// test
+    public void OnAttack(Character attacker) {
+        blood.Change(1);
     }
-
 }

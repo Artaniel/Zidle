@@ -11,11 +11,6 @@ public class ShopItem : MonoBehaviour
     private EconomyResource priceResource;
     private GlobalStat stat;
 
-    private void Start()
-    {
-        Boot.economy.ShopItemRegister(this);
-    }
-
     public void Init(EconomyResource resource, GlobalStat stat) { 
         priceResource = resource;
         this.stat = stat;
