@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ZombieFactory : MonoBehaviour
 {
+    private Boot _boot;
     public List<Character> zombieList;
     public GameObject zombiePrefab;
 
-    public void Init() {
+    public void Init(Boot boot) {
+        _boot = boot;
         zombieList = new List<Character>();
     }
 

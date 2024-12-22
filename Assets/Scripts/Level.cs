@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    private Boot _boot;
     public GameObject buildingPrefab;
     public int buildingCount = 1;
     public Vector4 borders;
     private List<Building> buildingList;
 
-    public void Init() {
+    public void Init(Boot boot) {
+        _boot = boot;
         buildingList = new List<Building>();
         for (int i = 0; i < buildingCount; i++) {
             Building newBuilding = Instantiate(buildingPrefab).GetComponent<Building>();

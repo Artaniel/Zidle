@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HumanFactory : MonoBehaviour
 {
+    private Boot _boot;
     public GameObject humanPrefab;
     public float spawnNumber = 10;
     public List<Character> humanList;
     public Transform container;
 
-    public void Init() {
+    public void Init(Boot boot) {
+        _boot = boot;
         humanList = new List<Character>();
         for (int i = 0; i < spawnNumber; i++) {
             Character human = Instantiate(humanPrefab).GetComponent<Character>();

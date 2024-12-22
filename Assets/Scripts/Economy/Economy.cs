@@ -5,6 +5,7 @@ using TMPro;
 
 public class Economy : MonoBehaviour
 {
+    private Boot _boot;
     public float zombiePrice = 10;
     public TextMeshProUGUI uiResourcesText;
     [HideInInspector] public EconomyResource energy;
@@ -13,7 +14,8 @@ public class Economy : MonoBehaviour
     public ResoursePrototype bloodPrototype;
     [HideInInspector] public GlobalStat attackSpeed;
 
-    public void Init() {
+    public void Init(Boot boot) {
+        _boot = boot;
         energy = EconomyResource.Instantiate(energyPrototype);
         blood = EconomyResource.Instantiate(bloodPrototype);
         attackSpeed = new GlobalStat(1);

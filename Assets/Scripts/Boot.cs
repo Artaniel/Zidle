@@ -21,12 +21,12 @@ public class Boot : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        level.Init();       
+        level.Init(this);       
 
-        humanFactory.Init();
-        zombieFactory.Init();
-        economy.Init();
-        shop.Init();
+        humanFactory.Init(this);
+        zombieFactory.Init(this);
+        economy.Init(this);
+        shop.Init(this);
     }
 
 }
