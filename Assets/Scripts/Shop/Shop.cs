@@ -13,6 +13,6 @@ public class Shop : MonoBehaviour
         _boot = boot;
         bloodForAttackSpeedItem = Instantiate(shopItemPrefab).GetComponent<ShopItem>();
         bloodForAttackSpeedItem.transform.SetParent(transform);
-        bloodForAttackSpeedItem.Init(Boot.economy.blood, Boot.economy.attackSpeed);
+        bloodForAttackSpeedItem.Init(_boot.economy.blood, _boot.economy.attackSpeed);
     }
 }

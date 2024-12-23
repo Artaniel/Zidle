@@ -18,13 +18,13 @@ public class HumanIdleState : IdleState
         float humanCount = 0;
         float minDist = Mathf.Infinity;
         Character minDistZombie = null;
-        foreach (Collider2D neirbor in Physics2D.OverlapCircleAll(owner.transform.position, lookRadius)) {
+        foreach (Collider2D neirbor in Physics2D.OverlapCircleAll(_owner.transform.position, lookRadius)) {
             if (neirbor.CompareTag(HUMANTAG))
                 humanCount++;
             else if (neirbor.CompareTag(ZOMBIETAG))
             {
                 zombieCount++;
-                float dist = Vector2.Distance(owner.transform.position, neirbor.transform.position);
+                float dist = Vector2.Distance(_owner.transform.position, neirbor.transform.position);
                 if (dist < minDist)
                 {
                     minDist = dist;
@@ -34,8 +34,8 @@ public class HumanIdleState : IdleState
         }
         if (minDistZombie) {
             if (Random.value < (zombieCount / (zombieCount + humanCount))) {
-                owner.attackTarget = minDistZombie;
-                owner.ChangeState(owner.moveState);
+                _owner.attackTarget = minDistZombie;
+                _owner.ChangeState(_owner.moveState);
             }
             else {
                 MoveToRandomIndors();
@@ -46,9 +46,9 @@ public class HumanIdleState : IdleState
     }
 
     private void MoveToRandomIndors() {
-        owner.currentBuilding = Boot.level.GetRandomBuilding();
-        owner.moveState.targetPosition = owner.currentBuilding.GetRandomPointInside();
-        owner.ChangeState(owner.moveState);        
+        _owner.currentBuilding = _boot.level.GetRandomBuilding();
+        _owner.moveState.targetPosition = _owner.currentBuilding.GetRandomPointInside();
+        _owner.ChangeState(_owner.moveState);        
     }
 
     private void IdleWalkUpdate() {
@@ -56,8 +56,8 @@ public class HumanIdleState : IdleState
         if (idleWalkTimer >= idleWalkPeriod) {
             idleWalkTimer = 0;
             idleWalkPeriod = Random.Range(0, idleWalkPeriodMax);
-            owner.moveState.targetPosition = owner.currentBuilding.GetRandomPointInside();
-            owner.ChangeState(owner.moveState);
+            _owner.moveState.targetPosition = _owner.currentBuilding.GetRandomPointInside();
+            _owner.ChangeState(_owner.moveState);
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
+    private Boot _boot;
     public Health health;
     [SerializeField] private StateBase currentState;
 
@@ -15,9 +16,10 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public Building currentBuilding;
 
-    public void Init() {
+    public void Init(Boot boot) {
+        _boot = boot;
         currentState = idleState;
-        currentState.StartState(this);
+        currentState.StartState(this, boot);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
@@ -29,6 +31,6 @@ public class Character : MonoBehaviour
 
     public void ChangeState(StateBase newStane) {
         currentState = newStane;
-        newStane.StartState(this);
+        newStane.StartState(this, _boot);
     }
 }

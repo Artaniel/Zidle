@@ -5,17 +5,14 @@ using UnityEngine.AI;
 
 public class ZombieIdleState : IdleState
 {
-    public override void StartState(Character _owner)
-    {
-        base.StartState(_owner);
+    public override void StartState(Character owner, Boot boot) {
+        base.StartState(owner, boot);
 
-        if (Boot.humanFactory.humanList == null || Boot.humanFactory.humanList.Count < 1)
-        {
+        if (_boot.humanFactory.humanList == null || _boot.humanFactory.humanList.Count < 1) {
             Debug.LogWarning("can't get humanFactory list");
             return;
         }
-        if (!owner.agent.isOnNavMesh)
-        {
+        if (!_owner.agent.isOnNavMesh) {
             Debug.LogWarning("agent not on navmesh");
             return;
         }
@@ -30,19 +27,17 @@ public class ZombieIdleState : IdleState
     protected void TryAttackClosest() {
         Character closestHuman = GetClosestAlive();
         if (closestHuman) {
-            owner.attackTarget = closestHuman;
-            owner.ChangeState(owner.moveState);
+            _owner.attackTarget = closestHuman;
+            _owner.ChangeState(_owner.moveState);
         }
     }
 
     protected Character GetClosestAlive() {
         float minPathLength = Mathf.Infinity;
         Character closestHuman = null;
-        foreach (Character human in Boot.humanFactory.humanList)
-        {
-            if (!human.health.isDead && Vector3.Distance(owner.transform.position, human.transform.position) < minPathLength)
-            {
-                minPathLength = Vector3.Distance(owner.transform.position, human.transform.position);
+        foreach (Character human in _boot.humanFactory.humanList) {
+            if (!human.health.isDead && Vector3.Distance(_owner.transform.position, human.transform.position) < minPathLength) {
+                minPathLength = Vector3.Distance(_owner.transform.position, human.transform.position);
                 closestHuman = human;
             }
         }
@@ -53,12 +48,10 @@ public class ZombieIdleState : IdleState
         NavMeshPath path = new NavMeshPath();
         float minPathLength = Mathf.Infinity;
         Character closestHuman = null;
-        foreach (Character human in Boot.humanFactory.humanList)
-        {
-            owner.agent.CalculatePath(human.transform.position, path);
-            float pathLength = GetPathLength(owner.transform.position, path);
-            if (pathLength < minPathLength)
-            {
+        foreach (Character human in _boot.humanFactory.humanList) {
+            _owner.agent.CalculatePath(human.transform.position, path);
+            float pathLength = GetPathLength(_owner.transform.position, path);
+            if (pathLength < minPathLength) {
                 minPathLength = pathLength;
                 closestHuman = human;
             }
@@ -69,8 +62,7 @@ public class ZombieIdleState : IdleState
     protected float GetPathLength(Vector3 startPoint, NavMeshPath path) {
         float result = 0;
         Vector3 previousCorner = startPoint;
-        foreach (Vector3 corner in path.corners)
-        {
+        foreach (Vector3 corner in path.corners) {
             result += Vector3.Distance(previousCorner, corner);
             previousCorner = corner;
         }

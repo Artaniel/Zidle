@@ -15,9 +15,9 @@ public class HumanFactory : MonoBehaviour
         humanList = new List<Character>();
         for (int i = 0; i < spawnNumber; i++) {
             Character human = Instantiate(humanPrefab).GetComponent<Character>();
-            human.currentBuilding = Boot.level.GetRandomBuilding();
+            human.currentBuilding = _boot.level.GetRandomBuilding();
             human.transform.position = human.currentBuilding.GetRandomPointInside();
-            human.Init();
+            human.Init(boot);
             humanList.Add(human);
         }
     }

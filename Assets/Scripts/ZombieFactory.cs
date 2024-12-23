@@ -15,6 +15,6 @@ public class ZombieFactory : MonoBehaviour
 
     public void SpawnNewZombie(Vector3 position) {
         Character zombie = Instantiate(zombiePrefab, position, Quaternion.identity).GetComponent<Character>();
-        zombie.Init();
+        zombie.Init(_boot);
     }
 }

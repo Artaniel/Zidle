@@ -13,15 +13,15 @@ public class AttackState : StateBase
 
     public override void StateUpdate()
     {
-        if (owner.attackTarget.health.isDead || !owner.attackTarget) {
+        if (_owner.attackTarget.health.isDead || !_owner.attackTarget) {
             SwichToIdle();
             return;
         }
-        if (Vector2.Distance(owner.transform.position, owner.attackTarget.transform.position) <= maxDist)
+        if (Vector2.Distance(_owner.transform.position, _owner.attackTarget.transform.position) <= maxDist)
         {
             timer += Time.deltaTime;
             float delay = 1f / speed;
-            while (timer > delay && !owner.attackTarget.health.isDead) {
+            while (timer > delay && !_owner.attackTarget.health.isDead) {
                 timer -= delay;
                 Attack();
             }
@@ -32,16 +32,16 @@ public class AttackState : StateBase
     }
 
     private void SwichToIdle() {
-        owner.attackTarget = null;
-        owner.ChangeState(owner.idleState);
+        _owner.attackTarget = null;
+        _owner.ChangeState(_owner.idleState);
     }
 
     private void Attack() {
-        owner.attackTarget.health.Damage(damage);
+        _owner.attackTarget.health.Damage(damage);
         if (VFXPrefab) {
-            GameObject vfx = Pool.GetPool(VFXPrefab, owner.attackTarget.transform.position,
-                Quaternion.LookRotation(Vector3.ProjectOnPlane(owner.attackTarget.transform.position - owner.transform.position, Vector3.forward)));
+            GameObject vfx = Pool.GetPool(VFXPrefab, _owner.attackTarget.transform.position,
+                Quaternion.LookRotation(Vector3.ProjectOnPlane(_owner.attackTarget.transform.position - _owner.transform.position, Vector3.forward)));
         }
-        Boot.economy.OnAttack(owner);
+        _boot.economy.OnAttack(_owner);
     }
 }
