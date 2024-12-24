@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4569474940074085006}
   - component: {fileID: 5991614848145686971}
   - component: {fileID: 8170304468877543992}
+  - component: {fileID: 790487306347272701}
   - component: {fileID: 4176993253616007495}
   m_Layer: 0
   m_Name: Boot
@@ -47,9 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696bf5535fc60d540a270897bc56ad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _humanFactory: {fileID: 5991614848145686971}
-  _zombieFactory: {fileID: 8170304468877543992}
-  _level: {fileID: 4176993253616007495}
+  ui: {fileID: 0}
+  humanFactory: {fileID: 5991614848145686971}
+  zombieFactory: {fileID: 8170304468877543992}
+  level: {fileID: 4176993253616007495}
+  economy: {fileID: 0}
 --- !u!114 &5991614848145686971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +83,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieList: []
   zombiePrefab: {fileID: 484862153160139966, guid: 3275e4eb7e5465d4ea9d805034bd091f, type: 3}
+--- !u!114 &790487306347272701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8820569084073528962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336928932c2768940829b5ddc4e9444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 484862153160139966, guid: 3275e4eb7e5465d4ea9d805034bd091f, type: 3}
 --- !u!114 &4176993253616007495
 MonoBehaviour:
   m_ObjectHideFlags: 0
