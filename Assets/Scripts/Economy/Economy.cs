@@ -7,7 +7,6 @@ public class Economy : MonoBehaviour
 {
     private Boot _boot;
     public float zombiePrice = 10;
-    public TextMeshProUGUI uiResourcesText;
     [HideInInspector] public EconomyResource energy;
     public ResoursePrototype energyPrototype;
     [HideInInspector] public EconomyResource blood;
@@ -27,10 +26,10 @@ public class Economy : MonoBehaviour
     }
 
     private void RefreshUI() {
-        uiResourcesText.text = "";
+        _boot.ui.uiResourcesText.text = "";
         // foreach resouces
-        uiResourcesText.text += $"{energy.GetUIString()}\n";
-        uiResourcesText.text += $"{blood.GetUIString()}\n";
+        _boot.ui.uiResourcesText.text += $"{energy.GetUIString()}\n";
+        _boot.ui.uiResourcesText.text += $"{blood.GetUIString()}\n";
     }
 
     public bool CanSpawn() {

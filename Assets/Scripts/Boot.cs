@@ -13,11 +13,10 @@ public class Boot : MonoBehaviour
     public Level level;
     public Economy economy;
 
-    public List<IGenericBootable> genericBootables;
-    public List<IUpdatable> updatables;
+    public List<ManualMonobehaviour> toInit;
+    public List<ManualMonobehaviour> toUpdate;
 
-    private void Awake()
-    {
+    private void Awake() {
         instance = this;
         level.Init(this);       
 
@@ -27,18 +26,12 @@ public class Boot : MonoBehaviour
 
         ui.Init(this);
 
-        genericBootables.ForEach(generic => generic.Init(this));
+        foreach (ManualMonobehaviour item in toInit)
+            item.Init(this);
     }
 
-    private void FixedUpdate() {
-        updatables.ForEach(updatable => updatable.ManualUpdate());
+    private void Update() {
+        foreach (ManualMonobehaviour item in toUpdate)
+            item.ManualUpdate();        
     }
-}
-
-public interface IGenericBootable {
-    public void Init(Boot boot);
-}
-
-public interface IUpdatable {
-    public void ManualUpdate();
 }

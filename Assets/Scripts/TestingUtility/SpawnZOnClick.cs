@@ -1,16 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpawnZOnClick : MonoBehaviour
+public class SpawnZOnClick : ManualMonobehaviour
 {
-    private Boot _boot;
     public GameObject prefab;
 
-    public void Init(Boot boot) {
-        _boot = boot;
-    }
-
-    private void Update() {
+    public override void ManualUpdate() {
         if (Mouse.current.leftButton.wasPressedThisFrame) {
             if (_boot.economy.CanSpawn()) {
                 _boot.zombieFactory.SpawnNewZombie(Vector3.ProjectOnPlane(Camera.main.ScreenToWorldPoint(Mouse.current.position.value),Vector3.forward));
@@ -18,5 +13,4 @@ public class SpawnZOnClick : MonoBehaviour
             }
         }
     }
-
 }
