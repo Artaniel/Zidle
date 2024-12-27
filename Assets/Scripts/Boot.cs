@@ -12,13 +12,16 @@ public class Boot : MonoBehaviour
     public ZombieFactory zombieFactory;
     public Level level;
     public Economy economy;
+    public Pool pool;
 
     public List<ManualMonobehaviour> toInit;
     public List<ManualMonobehaviour> toUpdate;
 
     private void Awake() {
         instance = this;
-        level.Init(this);       
+
+        level.Init(this);
+        pool.Init(this);
 
         humanFactory.Init(this);
         zombieFactory.Init(this);

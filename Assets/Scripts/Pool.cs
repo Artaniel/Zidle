@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pool : MonoBehaviour
+public class Pool : ManualMonobehaviour
 {
+    
     public static Pool instance;
     private List<PoolObject> toPoolBuffer;
     private Dictionary<string, LinkedList<PoolObject>> pools;
 
-    void Awake()
+    public override void Init()
     {
         instance = this;
         toPoolBuffer = new List<PoolObject>();
