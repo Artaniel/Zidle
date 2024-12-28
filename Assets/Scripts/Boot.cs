@@ -16,6 +16,7 @@ public class Boot : MonoBehaviour
 
     public List<ManualMonobehaviour> toInit;
     public List<ManualMonobehaviour> toUpdate;
+    public List<ManualMonobehaviour> toFixedUpdate;
 
     private void Awake() {
         instance = this;
@@ -36,5 +37,10 @@ public class Boot : MonoBehaviour
     private void Update() {
         foreach (ManualMonobehaviour item in toUpdate)
             item.ManualUpdate();        
+    }
+
+    private void FixedUpdate() {
+        foreach (ManualMonobehaviour item in toFixedUpdate)
+            item.ManualFixedUpdate();        
     }
 }

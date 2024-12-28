@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Character : MonoBehaviour
+public class Character : ManualMonobehaviour
 {
-    private Boot _boot;
     public Health health;
     [SerializeField] private StateBase currentState;
 
@@ -16,15 +15,16 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public Building currentBuilding;
 
-    public void Init(Boot boot) {
-        _boot = boot;
+    public Infection infection;
+
+    public override void Init() {
         currentState = idleState;
-        currentState.StartState(this, boot);
+        currentState.StartState(this, _boot);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
 
-    private void Update() {
+    public override void ManualFixedUpdate() {
         if (!health.isDead)
             currentState?.StateUpdate();
     }

@@ -12,4 +12,5 @@ public class ManualMonobehaviour : MonoBehaviour
 
     public virtual void Init() { }
     public virtual void ManualUpdate() { }
+    public virtual void ManualFixedUpdate() { }
 }
