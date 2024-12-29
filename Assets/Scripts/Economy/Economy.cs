@@ -13,11 +13,14 @@ public class Economy : MonoBehaviour
     public ResoursePrototype bloodPrototype;
     [HideInInspector] public GlobalStat attackSpeed;
 
+    public Virus virus;
+
     public void Init(Boot boot) {
         _boot = boot;
         energy = EconomyResource.Instantiate(energyPrototype);
         blood = EconomyResource.Instantiate(bloodPrototype);
         attackSpeed = new GlobalStat(1);
+        virus.Init(boot);
     }
 
     private void Update() {

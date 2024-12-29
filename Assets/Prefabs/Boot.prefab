@@ -45,6 +45,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 484862153160139966, guid: 3275e4eb7e5465d4ea9d805034bd091f, type: 3}
+--- !u!1 &1113514867726564002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5401057716701402697}
+  - component: {fileID: 559306697753236490}
+  m_Layer: 0
+  m_Name: Virus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5401057716701402697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113514867726564002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5332519140724716068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559306697753236490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113514867726564002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e7faaec9c2d7b4f823e85221f5da05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incubationSpeed: 0.01
 --- !u!1 &1140370794090833444
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +259,7 @@ MonoBehaviour:
   - {fileID: 2741187269213058956}
   toUpdate:
   - {fileID: 2741187269213058956}
+  toFixedUpdate: []
 --- !u!1001 &3106258693940189035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,13 +381,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      propertyPath: virus
+      value: 
+      objectReference: {fileID: 559306697753236490}
     - target: {fileID: 7846618080695192593, guid: 8374b779bef702c4088406aef275ee10, type: 3}
       propertyPath: m_Name
       value: Economy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 663762881240377829, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5401057716701402697}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8374b779bef702c4088406aef275ee10, type: 3}
 --- !u!4 &5332519140724716068 stripped

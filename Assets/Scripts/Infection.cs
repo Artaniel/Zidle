@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Infection : ManualMonobehaviour
 {
-    private Boot _boot;
     private Character _character;
 
     public float incubation = 0; // [0..1]
-    public float virusQuantity = 0;
-
+    public float contamination = 0;
 
     public void Init(Boot boot, Character character) {
-        _boot = boot;
+        Init(boot);
         _character = character;
     }
 
     public override void ManualFixedUpdate() {
-
+        if (contamination == 0) return;
+        incubation += contamination * _boot.economy.virus.incubationSpeed;
     }
 }
