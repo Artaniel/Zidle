@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class RpgStat : MonoBehaviour
 {
-    
+    public StatType statType;
 }
 
 public enum StatType
 {
-    Speed,
-    Health
+    IncubationSpeed,
+    MinimalInfectionAmmount,
+    AirborneTransitionSpeed,
+    BloodborneTransitionSpeed,
+    BiteTransitionChance,
+    BiteTransitionAmmount,
+    DeadRiseChancePerAmmount,
+    CombatAttack,
+    CombatDefence,
+    CombatRegeneration
 }
