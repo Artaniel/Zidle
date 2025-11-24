@@ -22,4 +22,9 @@ public class HumanFactory : MonoBehaviour
         }
     }
 
+    public void ManualFixedUpdate() {
+        foreach (Character human in humanList) {
+            human.ManualFixedUpdate();
+        }        
+    }
 }

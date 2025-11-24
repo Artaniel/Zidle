@@ -15,13 +15,15 @@ public class MoveState : StateBase
     }
 
     public override void StateUpdate() {
-        if (_owner.attackTarget)
-        {
+        Debug.Log("MoveState Update");
+        if (_owner.attackTarget) {
+            Debug.Log("Has Attack Target");
             RefreshDestination();
-            if (Vector2.Distance(_owner.transform.position, targetPosition) <= attackDistance)
+            if (Vector2.Distance(_owner.transform.position, targetPosition) <= attackDistance){
+                Debug.Log("Switching to Attack State");
                 _owner.ChangeState(_owner.attackState);
-        }
-        else {
+            }
+        } else {
             if (Vector2.Distance(_owner.transform.position, targetPosition) <= 0.1f) {
                 _owner.transform.position = targetPosition;
                 _owner.ChangeState(_owner.idleState);

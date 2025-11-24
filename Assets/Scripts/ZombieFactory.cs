@@ -13,8 +13,15 @@ public class ZombieFactory : MonoBehaviour
         zombieList = new List<Character>();
     }
 
+    public void ManualFixedUpdate() {
+        foreach (Character zombie in zombieList) {
+            zombie.ManualFixedUpdate();
+        }        
+    }
+
     public void SpawnNewZombie(Vector3 position) {
         Character zombie = Instantiate(zombiePrefab, position, Quaternion.identity).GetComponent<Character>();
         zombie.Init(_boot);
+        zombieList.Add(zombie);
     }
 }

@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -464,15 +460,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535727935662300935, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.041708045
       objectReference: {fileID: 0}
     - target: {fileID: 4535727935662300935, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
       propertyPath: m_Color.g
-      value: 0.1792453
+      value: 0.33962262
       objectReference: {fileID: 0}
     - target: {fileID: 4535727935662300935, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
       propertyPath: m_Color.r
-      value: 0.0020993343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154337062036955133, guid: 26b82d7cf10210a48aecc908a38189fe, type: 3}
       propertyPath: m_Name
@@ -576,6 +572,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1963017333}
+    - target: {fileID: 6212718945064796342, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
+      propertyPath: zombiePrice
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8820569084073528962, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: m_Name
       value: Boot

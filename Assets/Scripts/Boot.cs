@@ -40,6 +40,8 @@ public class Boot : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        zombieFactory.ManualFixedUpdate();
+        humanFactory.ManualFixedUpdate();
         foreach (ManualMonobehaviour item in toFixedUpdate)
             item.ManualFixedUpdate();        
     }

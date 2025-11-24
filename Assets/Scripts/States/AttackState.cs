@@ -11,22 +11,20 @@ public class AttackState : StateBase
 
     public override void Init() { }
 
-    public override void StateUpdate()
-    {
+    public override void StateUpdate() {
         if (_owner.attackTarget.health.isDead || !_owner.attackTarget) {
             SwichToIdle();
             return;
         }
-        if (Vector2.Distance(_owner.transform.position, _owner.attackTarget.transform.position) <= maxDist)
-        {
+        
+        if (Vector2.Distance(_owner.transform.position, _owner.attackTarget.transform.position) <= maxDist) {
             timer += Time.deltaTime;
             float delay = 1f / speed;
             while (timer > delay && !_owner.attackTarget.health.isDead) {
                 timer -= delay;
                 Attack();
             }
-        }
-        else {
+        } else {
             SwichToIdle();            
         }
     }

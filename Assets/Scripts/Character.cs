@@ -25,11 +25,13 @@ public class Character : ManualMonobehaviour
     }
 
     public override void ManualFixedUpdate() {
+        Debug.Log("Character FixedUpdate");
         if (!health.isDead)
             currentState?.StateUpdate();
     }
 
     public void ChangeState(StateBase newStane) {
+        Debug.Log($"Changing state from {currentState.GetType().Name} to {newStane.GetType().Name}");
         currentState = newStane;
         newStane.StartState(this, _boot);
     }
