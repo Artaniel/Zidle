@@ -48,7 +48,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 484862153160139966}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.01
+  m_Radius: 0.1
   m_Speed: 1
   m_Acceleration: 1000
   avoidancePriority: 50
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc8106c21ac212419be9fed4dd0ff65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   speed: 1
   maxDist: 0.5
   VFXPrefab: {fileID: 8010869233481945871, guid: 2c9d95e71953cc542a77a6c21ecf0d2b, type: 3}
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484862153160139966}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -204,8 +204,8 @@ Transform:
   m_GameObject: {fileID: 8111338391061187669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.845, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: -4.28, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6305877114773178583}
