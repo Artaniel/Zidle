@@ -8,17 +8,17 @@ public class Economy : MonoBehaviour
     private Boot _boot;
     public float zombiePrice = 10;
     [HideInInspector] public EconomyResource energy;
-    public ResoursePrototype energyPrototype;
+    public ResourseConfig energyConfig;
     [HideInInspector] public EconomyResource blood;
-    public ResoursePrototype bloodPrototype;
+    public ResourseConfig bloodConfig;
     [HideInInspector] public GlobalStat attackSpeed;
 
     public Virus virus;
 
     public void Init(Boot boot) {
         _boot = boot;
-        energy = EconomyResource.Instantiate(energyPrototype);
-        blood = EconomyResource.Instantiate(bloodPrototype);
+        energy = EconomyResource.Instantiate(energyConfig);
+        blood = EconomyResource.Instantiate(bloodConfig);
         attackSpeed = new GlobalStat(1);
         virus.Init(boot);
     }

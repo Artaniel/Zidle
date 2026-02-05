@@ -25,7 +25,6 @@ public class Character : ManualMonobehaviour
     }
 
     public override void ManualFixedUpdate() {
-        Debug.Log("Character FixedUpdate");
         if (!health.isDead)
             currentState?.StateUpdate();
     }

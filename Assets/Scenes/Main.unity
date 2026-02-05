@@ -572,10 +572,6 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1963017333}
-    - target: {fileID: 6212718945064796342, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
-      propertyPath: zombiePrice
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8820569084073528962, guid: 96c2c1a181eb06b4fb7f07062685752a, type: 3}
       propertyPath: m_Name
       value: Boot

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class EconomyResource
 {
@@ -15,7 +12,7 @@ public class EconomyResource
         return $"{value:0.00}/{max} {UIName}";
     }
 
-    public static EconomyResource Instantiate(ResoursePrototype prototype) {
+    public static EconomyResource Instantiate(ResourseConfig prototype) {
         return prototype.Instantiate();
     }
 

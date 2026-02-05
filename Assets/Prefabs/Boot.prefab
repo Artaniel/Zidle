@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incubationSpeed: 0.01
+  activePerks: []
 --- !u!1 &1140370794090833444
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +386,18 @@ PrefabInstance:
       propertyPath: virus
       value: 
       objectReference: {fileID: 559306697753236490}
+    - target: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      propertyPath: bloodConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: c5a6788c324bf9e4f8a0850aced28d0f, type: 2}
+    - target: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      propertyPath: zombiePrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517365370420157303, guid: 8374b779bef702c4088406aef275ee10, type: 3}
+      propertyPath: energyConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 9168b75351b6a7d428c346353bdcc1ef, type: 2}
     - target: {fileID: 7846618080695192593, guid: 8374b779bef702c4088406aef275ee10, type: 3}
       propertyPath: m_Name
       value: Economy

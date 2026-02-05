@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ResoursePrototype", menuName = "ScriptableObjects/ResoursePrototype", order = 1)]
-public class ResoursePrototype : ScriptableObject
+public class ResourseConfig : ScriptableObject
 {
     public float max = 1f;
     public float startingValue = 0f;
