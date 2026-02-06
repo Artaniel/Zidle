@@ -1,0 +1,104 @@
+Game Design Document: Zidle
+
+1. Game Overview
+1.1. Game Concept
+Zidle is a Zombie Idle Game. An idle game where players manage an infection, setting up its parameters to see how it will behave after infection of human population. 
+1.2. Genre
+Idle / Incremental Strategy Game.
+1.3. Platform
+Web (HTML5), possible port on Mobile (iOS, Android).
+1.4. Target Audience
+Casual players aged 12+, fans of idle games, and zombie genre.
+1.5. Camera Perspective
+The game uses an orthogonal camera perspective. Chess-like 30 degrees back from vertical.
+
+2. Gameplay Features
+2.1. Core Gameplay Loop
+Create Virus: choose perks from the progression tree.
+Start infection: choose zero patient or another way to spread the virus.
+Observe: your zombies fight and infect civilians.
+Collect: dead zombies and infected civilians are dropping useful resources like virus examples with new mutations. 
+Macro-control: later in progression the player can use active skills, to prevent enemy reinforcements from arriving, lock or unlock doors, etc.
+2.2. Key Mechanics
+Virus Evolution: Players customize the virus with perks unlocked through mutations, such as increased infection speed, enhanced zombie durability, or special abilities like emitting toxic clouds. These perks define combat abilities of zombies and are earned by collecting virus samples and achieving specific milestones during gameplay.
+Infection System: Infection spread by attack, kill, contact with an infected human, contact with stains of blood after combat, etc. It depends of virus perks.
+Resource Collection: Resources like virus samples and mutations drop from defeated zombies and infected humans, fueling upgrades and research.
+Active Skills: Player can influence battlefield by skills limited by cooldowns.
+Incubation and decay: The virus needs time to convert a human, and can't be held forever. Players can strategically manipulate these variables, opting for faster conversion of combatants or slower, stealthier spread among unconverted populations. These effects can be accelerated or delayed using active skills.
+Zombie tiers: Better variants of zombies can be grown with special conditions, like surviving with infection long enough, or accumulating over threshold of zombie kills before conversion.
+
+3. Graphics Assets
+3.1. Characters
+Zombies: Various types including walkers, runners, spitters, tanks.
+Humans: Civilians, soldiers, and people in biohazard suits.
+3.2. Environment
+Urban Areas
+Buildings: Exterior and interior (houses, shops, offices, bar).
+Streets: Roads, sidewalks, crosswalks, traffic lights.
+Vehicles: Cars, buses, abandoned military trucks.
+Decorations: Trash bins, benches, streetlights, posters.
+Rural Areas
+Buildings: Barns, farmhouses, sheds.
+Landscape: Fields, dirt roads, forests, rivers.
+Decorations: Fences, haystacks, tractors, wells.
+Special Locations
+Research Labs: High-tech equipment, biohazard signs, test chambers.
+Military Bases: Tents, vehicles, weapons storage, fences with barbed wire.
+Evacuation Centers: Tents, medical supplies, barricades.
+3.3. UI Elements
+Resource Indicators: Brains, samples, mutations.
+Skill Icons: Representing active skills and cooldowns.
+Progress Bars: Infection spread, zombie conversion, and resource collection.
+3.4. Zombie Variations
+Damaged zombie models to reflect health states.
+Visual effects for toxic clouds or exploding zombies.
+3.5. Human Variations
+Civilians: Different clothing and accessories (backpacks, hats, glasses).
+Soldiers: Variations in uniforms and equipment (helmets, weapons).
+Biohazard suits: Color variations and minor detail changes.
+3.6. Character Animations
+Civilians:
+Primary fear: Wide eyes, hands up in panic.
+Panicked run: Sprinting with erratic movements.
+Paralysis: Standing frozen, shaking slightly.
+Decision to fight: A sudden stance change, fists clenched or grabbing a nearby object.
+Berserk mode: Laughing maniacally, aggressive movements after killing multiple zombies.
+Zombies:
+Idle: Subtle swaying, occasional twitching.
+Attack: Lunge forward with clawing or biting motions.
+Death: Falling apart, collapsing to the ground.
+Special abilities: Unique animations for toxic clouds or explosions.
+
+4. Virus Perks
+4.1. Infection Perks
+Fast Spread: Increases the speed at which the infection propagates.
+Bloodborne Transmission: Enhances infection through blood contact.
+Airborne Mutation: Allows limited infection through air.
+Incubation Acceleration: Reduces the time required to convert an infected human.
+Incubation Deceleration: Increases the time before infected humans turn, enabling stealthier spread.
+Increased Infectivity: Boosts the likelihood of infection from unturned humans.
+Enhanced Bite Transmission: Improves the chance of infection through zombie attacks.
+Adrenaline Boost: Zombies gain increased speed and damage output when at low health.
+Necrotic Toxin: Increases the likelihood of infected humans dying instead of turning into zombies.
+4.2. Combat Perks
+Enhanced Strength: Increases zombie damage output.
+Tough Skin: Reduces damage taken by zombies.
+Regeneration: Allows zombies to recover health over time.
+4.4. Special Perks
+Toxic Emission: Zombies emit a cloud that weakens nearby humans.
+Exploding Zombies: Zombies explode upon death, dealing damage.
+
+5. Skill List
+5.1. Basic Skills
+Door Lock: Temporarily seal a building to trap humans or zombies inside.
+Distraction: Lure humans into a specific area for easier infection.
+5.2. Offensive Skills
+Toxic Cloud: Release a poisonous gas that weakens humans and strengthens zombies.
+Overrun: Boost the speed and aggression of nearby zombies.
+5.3. Defensive Skills
+Reinforcement Block: Prevent new human reinforcements from entering the battlefield.
+Fortify Horde: Temporarily increase the durability of all zombies in a specific area.
+5.4. Strategic Skills
+Infection Boost: Accelerate the infection rate of humans.
+Area Scan: Highlight high-value targets or weak points in the environment.
+

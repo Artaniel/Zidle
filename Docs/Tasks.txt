@@ -1,0 +1,53 @@
+# 1. Complete the virus evolution system
+
+## 1.1. Base EvolutionPerk class
+- [ ] Add base properties to EvolutionPerk:
+  - `string id` - unique identifier
+  - `string displayName` - human-readable name
+  - `string description` - perk description
+  - `Sprite icon` - visual representation
+  - `List<EvolutionPerk> requiredPerks` - perk dependencies
+  - `bool isUnlocked` - track perk state
+  - `int cost` - cost to unlock (in resources)
+  - `int maxLevel` - maximum upgrade level
+  - `int currentLevel` - current upgrade level
+
+## 1.2. Implement perk effects system
+- [ ] Create perk effect interfaces:
+  - `IStatModifier` - for modifying character stats
+  - `IInfectionModifier` - for modifying infection behavior
+  - `IAbilityUnlocker` - for unlocking special abilities
+  - `IResourceModifier` - for modifying resource gains
+
+## 1.3. Implement RefreshStatsFromPerks() in Virus.cs
+- [ ] Create method to apply perk effects:
+  - Reset all stats to base values
+  - Iterate through activePerks list
+  - Apply each perk's effects
+  - Handle stacking of similar effects
+  - Update UI to reflect changes
+
+## 1.4. Implement perk unlocking system
+- [ ] Add methods to Virus class:
+  - `bool CanUnlockPerk(EvolutionPerk perk)`
+  - `bool UnlockPerk(EvolutionPerk perk)`
+  - `bool CanUpgradePerk(EvolutionPerk perk)`
+  - `bool UpgradePerk(EvolutionPerk perk)`
+
+## 1.5. Create test perks
+- [ ] Implement sample perks from GDD:
+  - Fast Spread (increases infection speed)
+  - Bloodborne Transmission (enables blood spread)
+  - Airborne Mutation (enables air transmission)
+  - Incubation Acceleration/Deceleration
+  - Enhanced Strength/Toughness for zombies
+
+# 2. Finish the infection mechanics in Infection.cs to handle the spread of the virus between characters.
+- [ ] Implement infection spread between characters
+- [ ] Add infection visual feedback
+- [ ] Balance infection rates and mechanics
+
+# 3. Implement the resource collection system to reward players for infected humans and defeated zombies.
+- [ ] Create resource drops from infected humans
+- [ ] Add resource collection mechanics
+- [ ] Implement resource UI and tracking
