@@ -2,11 +2,11 @@ Game Design Document: Zidle
 
 1. Game Overview
 1.1. Game Concept
-Zidle is a Zombie Idle Game. An idle game where players manage an infection, setting up its parameters to see how it will behave after infection of human population. 
+Zidle is a Zombie Idle Game. An idle game where players manage an infection, setting up its parameters to see how it will behave after iinjection to human population. 
 1.2. Genre
 Idle / Incremental Strategy Game.
 1.3. Platform
-Web (HTML5), possible port on Mobile (iOS, Android).
+WebGL.
 1.4. Target Audience
 Casual players aged 12+, fans of idle games, and zombie genre.
 1.5. Camera Perspective

@@ -1,18 +1,17 @@
 # 1. Complete the virus evolution system
 
 ## 1.1. Base EvolutionPerk class
-- [ ] Add base properties to EvolutionPerk:
-  - `string id` - unique identifier
+- [+] Add base properties to EvolutionPerk:
   - `string displayName` - human-readable name
   - `string description` - perk description
   - `Sprite icon` - visual representation
-  - `List<EvolutionPerk> requiredPerks` - perk dependencies
-  - `bool isUnlocked` - track perk state
+  - `List<EvolutionPerk> requiredPerks` - perk dependencies /// why?
+  - `bool isUnlocked` - track perk state // not here. It is state, not constant data
   - `int cost` - cost to unlock (in resources)
   - `int maxLevel` - maximum upgrade level
   - `int currentLevel` - current upgrade level
 
-## 1.2. Implement perk effects system
+## 1.2. Implement perk effects system /// Why? I don't use interfaces for nothing
 - [ ] Create perk effect interfaces:
   - `IStatModifier` - for modifying character stats
   - `IInfectionModifier` - for modifying infection behavior
